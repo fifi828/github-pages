@@ -4,63 +4,58 @@
     <meta charset="UTF-8">
     <title>雨量戰情室</title>
     <meta name="viewport" content="width=600, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #e4f1fe;
-            font-family: "Microsoft JhengHei", "Heiti TC", Arial, sans-serif;
+            background: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%);
+            font-family: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", Arial, sans-serif;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
         }
         header {
-            background: #2980b9;
+            background: rgba(24, 62, 110, 0.95);
             color: #fff;
-            padding: 24px 0;
+            padding: 36px 0 18px 0;
             text-align: center;
-            font-size: 2.2em;
-            letter-spacing: 0.1em;
-            box-shadow: 0 2px 8px rgba(41,128,185,0.1);
+            font-size: 2.5em;
+            letter-spacing: 0.12em;
+            font-family: 'Montserrat', 'Noto Sans TC', Arial, sans-serif;
+            box-shadow: 0 4px 16px rgba(24,62,110,0.13);
+            position: relative;
+        }
+        header::after {
+            content: "";
+            display: block;
+            margin: 18px auto 0 auto;
+            width: 80px;
+            height: 6px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #48cae4 0%, #0096c7 100%);
+            opacity: 0.8;
         }
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 40px 0;
+            margin: 48px 0;
         }
-        .iframe-container {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 20px rgba(41,128,185,0.13);
-            padding: 24px;
+        .card {
+            background: rgba(255,255,255,0.97);
+            border-radius: 20px;
+            box-shadow: 0 6px 32px rgba(24,62,110,0.15);
+            padding: 32px 32px 24px 32px;
+            max-width: 700px;
+            transition: box-shadow 0.3s;
+            border: 1.5px solid #caf0f8;
         }
-        @media (max-width: 650px) {
-            .iframe-container, iframe {
-                width: 100vw;
-                min-width: 0;
-                padding: 0;
-                border-radius: 0;
-            }
-            iframe {
-                width: 100vw;
-                height: 60vw;
-            }
+        .card:hover {
+            box-shadow: 0 12px 50px rgba(0,150,199,0.17);
         }
-    </style>
-</head>
-<body>
-    <header>
-        雨量戰情室
-    </header>
-    <main>
-        <div class="iframe-container">
-            <iframe 
-                title="雨量" 
-                width="600" 
-                height="373.5" 
-                src="https://app.powerbi.com/view?r=eyJrIjoiMzk5NmYxMWMtMmNlMC00NDIwLTkzNDctYmVjOWY4Mzg2MDYzIiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" 
-                frameborder="0" 
-                allowfullscreen="true">
-            </iframe>
-        </div>
-    </main>
-</body>
-</html>
+        .iframe-title {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: #2563a6;
+            margin-bottom: 18px;
+            text-align: center;
+            letter-spacing: 0.
