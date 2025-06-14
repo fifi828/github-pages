@@ -81,18 +81,26 @@
             padding: 24px 0;
             background: rgba(255,255,255,0.3);
         }
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.8em;
+            }
+            .iframe-title {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>雨量戰情室</header>
     <main>
         <div class="card">
-            <div class="iframe-title">即時雨量資料（中央氣象署）</div>
-            <iframe src="https://www.cwb.gov.tw/V8/C/W/OBS_Rain.html" title="即時雨量觀測圖"></iframe>
+            <div class="iframe-title">雨量分析儀表板（Power BI）</div>
+            <iframe title="雨量" src="https://app.powerbi.com/view?r=eyJrIjoiMzk5NmYxMWMtMmNlMC00NDIwLTkzNDctYmVjOWY4Mzg2MDYzIiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" allowfullscreen="true"></iframe>
         </div>
     </main>
     <footer>
-        資料來源：中央氣象署　|　更新時間依各單位為準
+        資料來源：Power BI 資料視覺化報表　|　顯示資料依最新時間為準
     </footer>
 </body>
 </html>
