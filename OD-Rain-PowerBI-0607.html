@@ -1,107 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>雨量戰情室</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            background: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%);
-            font-family: "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background: rgba(24, 62, 110, 0.95);
-            color: #fff;
-            padding: 36px 0 24px;
-            text-align: center;
-            font-size: 2.5em;
-            letter-spacing: 0.1em;
-            font-family: 'Montserrat', 'Noto Sans TC', Arial, sans-serif;
-            box-shadow: 0 4px 16px rgba(24,62,110,0.13);
-            position: relative;
-        }
-        header::after {
-            content: "";
-            display: block;
-            margin: 20px auto 0;
-            width: 100px;
-            height: 6px;
-            border-radius: 6px;
-            background: linear-gradient(90deg, #48cae4 0%, #0096c7 100%);
-            opacity: 0.85;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 16px 60px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0, 70, 110, 0.15);
-            padding: 32px;
-            max-width: 850px;
-            width: 100%;
-            border: 2px solid #caf0f8;
-            margin-bottom: 32px;
-            transition: box-shadow 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 12px 40px rgba(0, 150, 199, 0.18);
-        }
-        .iframe-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #1d4e89;
-            margin-bottom: 24px;
-            text-align: center;
-            letter-spacing: 0.05em;
-        }
-        iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-            border-radius: 12px;
-        }
-        footer {
-            text-align: center;
-            font-size: 0.9em;
-            color: #003049;
-            padding: 24px 0;
-            background: rgba(255,255,255,0.3);
-        }
-        @media (max-width: 768px) {
-            header {
-                font-size: 1.8em;
-            }
-            .iframe-title {
-                font-size: 1.2em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>雨量戰情室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(135deg, #bde0fe, #a2d2ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      background-color: #18406E;
+      color: white;
+      padding: 32px 16px;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    header::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 6px;
+      margin: 16px auto 0;
+      background: linear-gradient(to right, #48cae4, #0096c7);
+      border-radius: 3px;
+    }
+    .container {
+      max-width: 960px;
+      width: 100%;
+      padding: 32px 16px;
+    }
+    .card {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 2px solid #90e0ef;
+    }
+    .iframe-title {
+      font-size: 1.4em;
+      text-align: center;
+      color: #1d4e89;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 12px;
+    }
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.8em;
+      }
+      .iframe-title {
+        font-size: 1.2em;
+      }
+      iframe {
+        height: 400px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>雨量戰情室</header>
-    <main>
-        <div class="card">
-            <div class="iframe-title">雨量分析儀表板（Power BI）</div>
-            <iframe title="雨量" src="https://app.powerbi.com/view?r=eyJrIjoiMzk5NmYxMWMtMmNlMC00NDIwLTkzNDctYmVjOWY4Mzg2MDYzIiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" allowfullscreen="true"></iframe>
-        </div>
-    </main>
-    <footer>
-        資料來源：Power BI 資料視覺化報表　|　顯示資料依最新時間為準
-    </footer>
+  <header>雨量戰情室</header>
+  <div class="container">
+    <div class="card">
+      <div class="iframe-title">Power BI 雨量儀表板</div>
+      <iframe title="雨量" src="https://app.powerbi.com/view?r=eyJrIjoiMzk5NmYxMWMtMmNlMC00NDIwLTkzNDctYmVjOWY4Mzg2MDYzIiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" allowfullscreen="true"></iframe>
+    </div>
+  </div>
 </body>
 </html>
 
